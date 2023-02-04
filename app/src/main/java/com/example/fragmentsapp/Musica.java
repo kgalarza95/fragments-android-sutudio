@@ -12,7 +12,6 @@ public class Musica extends Fragment {
 
 
     public Musica() {
-        // Required empty public constructor
     }
 
     public static Musica newInstance(String param1, String param2) {
@@ -32,8 +31,10 @@ public class Musica extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, // cargar Fragment en contenedor padre
+                             ViewGroup container,//grupo de vistas
+                             Bundle savedInstanceState // pasar datos entre vistas
+    ) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_musica, container, false);
     }

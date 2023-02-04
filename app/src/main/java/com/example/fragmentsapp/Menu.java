@@ -1,5 +1,6 @@
 package com.example.fragmentsapp;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 public class Menu extends Fragment {
+
+    // id de botones de la vista del fragment
+    private final int[] BOTONES_MENU = {R.id.linterna, R.id.musica, R.id.nivel};
 
     public Menu() {
     }
@@ -28,9 +33,38 @@ public class Menu extends Fragment {
         }
     }*/
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_menu, container, false);
+    public View onCreateView(LayoutInflater inflater, // cargar Fragment en contenedor padre
+                             ViewGroup container,//grupo de vistas
+                             Bundle savedInstanceState // pasar datos entre vistas
+    ) {
+        //ogtener la vista del fragment
+        View vistaMenu = inflater.inflate(R.layout.fragment_menu, container, false);
+
+        //identificar en que actividad me encuentro y que botón fue pulsado
+
+        ImageButton btnMenu;
+
+        for (int i = 0; i < this.BOTONES_MENU.length; i++) {
+            //obtener los botones de la vista y agregarles eventos a cada uno.
+            btnMenu = (ImageButton) vistaMenu.findViewById(BOTONES_MENU[i]);
+
+            final int miBoton = i;
+
+            btnMenu.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //identificar en que actividad me enceuntro
+                    Activity miActivity = getActivity();//obtener actividad actual
+
+                    //castear para llamar al metodo menu de la interfaz "ComunicaMenu" de un objeto Activity
+                    ((ComunicaMenu) miActivity).menu(miBoton);
+
+
+                }
+            });
+        }
+
+
+        return vistaMenu;
     }
 }

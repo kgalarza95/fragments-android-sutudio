@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".Menu">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_horizontal"
+        android:orientation="horizontal"
         android:weightSum="1">
 
         <ImageButton
@@ -22,18 +22,17 @@
 
         </ImageButton>
 
-        <Space
-            style="@style/espacio">
-        </Space>
+        <Space style="@style/espacio"></Space>
+
         <ImageButton
             android:id="@+id/nivel"
             style="@style/botones"
             android:src="@drawable/ic_launcher_foreground">
 
         </ImageButton>
-        <Space
-            style="@style/espacio">
-        </Space>
+
+        <Space style="@style/espacio"></Space>
+
         <ImageButton
             android:id="@+id/musica"
             style="@style/botones"
@@ -41,8 +40,6 @@
 
         </ImageButton>
     </LinearLayout>
-
-
 
 
 </FrameLayout>
