@@ -14,6 +14,9 @@ public class Menu extends Fragment {
 
     // id de botones de la vista del fragment
     private final int[] BOTONES_MENU = {R.id.linterna, R.id.musica, R.id.nivel};
+    private final int[] BOTONES_SELECTED = {R.drawable.linterna2, R.drawable.misca2, R.drawable.nivel2};
+
+    private int botonIlum = 99999;
 
     public Menu() {
     }
@@ -42,11 +45,19 @@ public class Menu extends Fragment {
 
         //identificar en que actividad me encuentro y que botón fue pulsado
 
+        if (getArguments() != null) {
+            botonIlum = getArguments().getInt("btnPulsado");
+        }
+
         ImageButton btnMenu;
 
         for (int i = 0; i < this.BOTONES_MENU.length; i++) {
             //obtener los botones de la vista y agregarles eventos a cada uno.
             btnMenu = (ImageButton) vistaMenu.findViewById(BOTONES_MENU[i]);
+
+            if (botonIlum == i) {
+                btnMenu.setImageResource(this.BOTONES_SELECTED[i]);
+            }
 
             final int miBoton = i;
 

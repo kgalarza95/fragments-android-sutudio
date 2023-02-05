@@ -18,7 +18,7 @@
         <ImageButton
             android:id="@+id/linterna"
             style="@style/botones"
-            android:src="@android:drawable/checkbox_on_background">
+            android:src="@drawable/linterna">
 
         </ImageButton>
 
@@ -27,7 +27,7 @@
         <ImageButton
             android:id="@+id/nivel"
             style="@style/botones"
-            android:src="@drawable/ic_launcher_foreground">
+            android:src="@drawable/nivel">
 
         </ImageButton>
 
@@ -36,7 +36,7 @@
         <ImageButton
             android:id="@+id/musica"
             style="@style/botones"
-            android:src="@android:drawable/ic_lock_silent_mode_off">
+            android:src="@drawable/musica">
 
         </ImageButton>
     </LinearLayout>

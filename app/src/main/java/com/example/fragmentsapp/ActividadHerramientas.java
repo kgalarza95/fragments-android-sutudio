@@ -4,15 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 
-public class ActividadHerramientas extends AppCompatActivity implements ComunicaMenu{
+public class ActividadHerramientas extends AppCompatActivity implements ComunicaMenu {
 
     // id de botones de la vista del fragment
    /* private final int[] ID_FRAGMENTOS = {R.layout.fragment_linterna, R.layout.fragment_musica,
             R.layout.fragment_nivel};*/
 
     Fragment[] misFragmentos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,20 @@ public class ActividadHerramientas extends AppCompatActivity implements Comunica
         FragmentManager miManejador = getSupportFragmentManager();//getFragmentManager();
         FragmentTransaction miTrnsaccion = miManejador.beginTransaction();
 
+
+        //------------------------------------------------------------------------------------------
+        Fragment menuIlumminado = new Menu();
+
+        //pasar la información del boton pulsado al nuevo fragment
+        Bundle bundle = new Bundle();
+        bundle.putInt("btnPulsado", botonPress);
+        //reemplazar menu nt por menu ilumminado
+        menuIlumminado.setArguments(bundle);
+        miTrnsaccion.replace(R.id.menu, menuIlumminado);
+        //------------------------------------------------------------------------------------------
+
+
+        //remplazar fragmento actual con el nuevo indicado en el contenedor
         miTrnsaccion.replace(R.id.contenedor_fragment, misFragmentos[botonPress]);
         miTrnsaccion.commit();
     }
