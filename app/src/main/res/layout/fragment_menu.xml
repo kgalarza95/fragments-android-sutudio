@@ -15,30 +15,110 @@
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <ImageButton
-            android:id="@+id/linterna"
-            style="@style/botones"
-            android:src="@drawable/linterna">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        </ImageButton>
+            <ImageButton
+                android:id="@+id/linterna"
+                style="@style/botones"
+                android:contentDescription="Linterna"
+                android:src="@drawable/linterna"
+                android:tooltipText="linterna">
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="boton texto">
+
+            </TextView>
+        </LinearLayout>
+
 
         <Space style="@style/espacio"></Space>
 
-        <ImageButton
-            android:id="@+id/nivel"
-            style="@style/botones"
-            android:src="@drawable/nivel">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        </ImageButton>
+            <ImageButton
+                android:id="@+id/nivel"
+                style="@style/botones"
+                android:contentDescription="Nivel"
+                android:src="@drawable/nivel"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="boton texto">
+            </TextView>
+        </LinearLayout>
+
 
         <Space style="@style/espacio"></Space>
 
-        <ImageButton
-            android:id="@+id/musica"
-            style="@style/botones"
-            android:src="@drawable/musica">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        </ImageButton>
+            <ImageButton
+                android:id="@+id/musica"
+                style="@style/botones"
+                android:contentDescription="Musica"
+                android:src="@drawable/musica">
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="boton texto">
+
+            </TextView>
+        </LinearLayout>
+
+
+        <Space style="@style/espacio"></Space>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/musica2"
+                style="@style/botones"
+                android:contentDescription="Musica 2"
+                android:src="@drawable/musica"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="botone texto">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/musica3"
+                style="@style/botones"
+                android:contentDescription="Musica 2"
+                android:src="@drawable/musica"></ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="botone texto">
+            </TextView>
+        </LinearLayout>
+
     </LinearLayout>
 
 
